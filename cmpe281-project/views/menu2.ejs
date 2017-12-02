@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FoodAPP</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
+<nav class="navbar navbar-inverse" width=100%>
+   <div class="container-fluid">
+     <div class="navbar-header">
+       <a href="/" onclick="return false;" class="navbar-brand">FOODAPP </a>
+       <ul class="nav navbar-nav">
+         <li class="nav-right"><a href="/logout">LOGOUT</a></li>
+       </ul>
+   </div>
+
+      </div>
+   </div>
+
+</nav>
+<table style="width: 100%">
+<tr>
+<td>
+
+<table style="width: 50%">
+<ul class="menu">
+<div><tr align="left">
+<th font-size="24px">Indian</th>
+</tr>
+<% for(var i=0; i<menu1.length; i++) {%>
+<form method="post" action="/addToCart/?product_id=<%=  menu1[i].product_id %>">
+<tr>
+<td><span><%= menu1[i].product_name %></span></td>
+  <td padding="20px"><span><%= menu1[i].price %></span></td>
+     <td padding="20px">
+     <button class="btn btn-outline-success">Add to cart</button>
+    </td>
+</tr>
+</form>
+<% } %>
+
+</div>
+
+<div>
+<tr>
+<td></td>
+</tr>
+<tr align="left">
+<th>Italian</th>
+</tr>
+<% for(var i=0; i<menu2.length; i++) {%>
+<form method="post"  action="/addToCart/?product_id=<%=  menu2[i].product_id %>">
+<tr>
+<td><span><%= menu2[i].product_name %></span></td>
+<td><span><%= menu2[i].price %></span></td>
+<td>
+<button class="btn btn-outline-success">Add to cart</button>
+</td>
+</tr>
+</form>
+<% } %>
+</div>
+
+<div>
+<tr>
+<td></td>
+</tr>
+<tr align="left">
+<th>Chinese</th>
+</tr>
+<% for(var i=0; i<menu3.length; i++) {%>
+<form method="post"  action="/addToCart/?product_id=<%=  menu3[i].product_id %>">
+<tr>
+<td><span><%= menu3[i].product_name %></span></td>
+<td><span><%= menu3[i].price %></span></td>
+<td>
+<button	class="btn btn-outline-success">Add to cart</button>
+</td>
+</tr>
+</form>
+<% } %>
+</div>
+
+<div>
+<tr>
+<td></td>
+</tr>
+<tr align="left">
+<th>Mexican</th>
+</tr>
+<% for(var i=0; i<menu4.length; i++) {%>
+<form method="post"  action="/addToCart/?product_id=<%=  menu4[i].product_id %>">
+<tr>
+<td><span><%= menu4[i].product_name %></span></td>
+<td><span><%= menu4[i].price %></span></td>
+<td>
+<button class="btn btn-outline-success">Add to cart</button>
+</td>
+</tr>
+</form>
+<% } %>
+</div>
+</ul>
+</table>
+</td>
+
+<td>
+
+<table style="width: 50%">
+<div>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr align="left">
+<th>Items in your cart:</th>
+</tr>
+<tr>
+<td>Item</td>
+<td>Quantity</td>
+<td>Price</td>
+</tr>
+<% for(var i=0; i<cartItems.length; i++) {%>
+<tr>
+<td><span><%= cartItems[i].product_name %></span></td>
+<td><span><%= cartItems[i].quantity %></span></td>
+<td><span><%= cartItems[i].price %></span></td>
+<td><form method="post"  action="/deleteFromCart/?product_id=<%=cartItems[i].product_id %>">
+<button	class="btn btn-outline-success">Delete from cart</button>
+</form></td>
+
+</tr>
+<% } %>
+<tr>
+<td>Total</td>
+<td>  </td>
+<td><span><%= total.toFixed(2) %></span></td>
+</tr>
+<tr><td> </td></tr>
+<tr><td></td>
+<td></td>
+<td></td>
+<td><form method="post"  action="/confirmOrder">
+<button	class="btn btn-outline-success">Confirm Order</button>
+</form>
+</td>
+</tr>
+</div>
+</table>
+
+
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>

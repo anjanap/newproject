@@ -1,0 +1,16 @@
+body {
+  padding: 50px;
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url('../images/food6.jpg');no-repeat width:100px;height:100vh;
+}
+h1{font-size: 5px;}
+a {
+  color: #00B7FF;
+}
+
+
+.menu li
+{
+	display:inline-block;
+	margin-right:20px;
+}

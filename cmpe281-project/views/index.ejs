@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+  <head>
+    <title>FOODAPP</title>
+
+    <link rel='stylesheet' href='/stylesheets/login.css'/>
+    <style>
+input.ng-invalid.ng-dirty{
+  border: 1px solid red;
+}
+</style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid bg">
+      <div class="row">
+        <div class='col-md-4 col-sm-4 col-xs-12'></div>
+        <div class='col-md-4 col-sm-4 col-xs-12'>
+   <form name="form" method="post" action="/login" class="form-container">
+     <div>
+      <input type="text" class="form-control" id="username" name="username" autocomplete="off" ng-model="user.email" placeholder="Email" required><br/>
+    <span ng-show="form.email.$dirty && form.email.$error.required"></span>
+  <span ng-show="form.email.$dirty && form.email.$error.email"></span>
+
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" id="password" name="password" autocomplete="off" ng-model="user.password" placeholder="Password" required><br/>
+      <span ng-show="form.password.$dirty && form.password.$error.required"></span>
+
+    </div>
+<input type="submit" class="btn btn-info btn-block" value="Login">
+  </form>
+</div>
+  <br>
+  <div class='col-md-4 col-sm-4 col-xs-12'></div>
+</div>
+</div>
+  </body>
+</html>

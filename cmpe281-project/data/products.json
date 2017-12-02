@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Noodles",
+    "description":
+      "Noodles is <span class=\"label label-info\">3 Dollars each</span>",
+    "price": 25
+  },
+  {
+    "id": 2,
+    "title": "Chop Suey",
+    "description":
+      "Chop Suey is <span class=\"label label-info\">3 Dollars each</span>",
+    "price": 30
+  },
+  {
+    "id": 3,
+    "title": "Fried rice",
+    "description":
+      "Fried rice is <span class=\"label label-info\">2 Dollars each</span>",
+    "price": 15
+  },
+  {
+    "id": 4,
+    "title": "Paneer chilli",
+    "description":
+      "Paneer Chilli is <span class=\"label label-info\">3 Dollars each</span>, but are <span class=\"label label-warning\">available as 3 for the price of 2</span>",
+    "price": 100
+  }
+]
